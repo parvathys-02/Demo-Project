@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class=" shadow text-dark w-50 fs-5 m-3 p-3 mx-auto">
+    <h2 class="text-center">Add Category</h2>
+<form method="POST" enctype="multipart/form-data">
+ {% csrf_token %}
+
+    <table class="">
+        {{form.as_table}}
+    </table>
+    <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-2">
+  <button class="btn btn-dark text-light shadow-lg mb-3" type="submit">Submit</button>
+</div>
+ </form>
+</div>
+
+{% endblock %}

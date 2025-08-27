@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--banner section start -->
+         <div class="banner_section layout_padding">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="taital_main">
+                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
+                                 <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
+                                 <div class="book_bt"><a href="#">Shop Now</a></div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div><img src="{% static 'images/img-1.png' %}" class="image_1"></div>
+                           </div>
+                        </div>
+                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="taital_main">
+                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
+                                 <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
+                                 <div class="book_bt"><a href="#">Shop Now</a></div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div><img src="{% static 'images/img-1.png' %}" class="image_1"></div>
+                           </div>
+                        </div>
+                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="taital_main">
+                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
+                                 <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
+                                 <div class="book_bt"><a href="#">Shop Now</a></div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div><img src="{% static 'images/img-1.png' %}" class="image_1"></div>
+                           </div>
+                        </div>
+                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
+                     </div>
+                  </div>
+               </div>
+               <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+               <i class=""><img src="{% static 'images/left-icon.png' %}"></i>
+               </a>
+               <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+               <i class=""><img src="{% static 'images/right-icon.png' %}"></i>
+               </a>
+            </div>
+         </div>
+         <!--banner section end -->
+     <!--category section start -->
+      <div class="container">
+          <h1 class="category_text mt-5">Category</h1>
+        <p class="text-justify">Lorem ipsum, placeholder or dummy text used in typesetting and graphic design for previewing layouts. It features scrambled Latin text, which emphasizes the design over content of the layout. It is the standard placeholder text of the printing and publishing industries. Lorem ipsum, placeholder or dummy text used in typesetting and graphic design for previewing layouts. It features scrambled Latin text, which emphasizes the design over content of the layout. It is the standard placeholder text of the printing and publishing industries.</p>
+         <div class="category_section_2" style="margin-top:20px;">
+
+            <div class="row">
+               {% for i in category %}
+               <div class="col-lg-4 col-sm-12 mb-4">
+                  <div class="beds_section active">
+                     <h1 class="bed_text mt-3">{{i.name}}</h1>
+                     <div><img src="{{i.image.url}}" class="image_2" style="width:100%;height:100px;;"></div>
+                     <div class="seemore_bt"><a href="{% url 'shop:product' i.pk %}"><button class="btn btn-primary">View Products</button></a></div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+
+         </div>
+      </div>
+      <!-- category section end -->
+
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Search Products</h2>
+
+  <form method="POST" action="{% url 'search:search' %}" class="mb-4">
+      {% csrf_token %}
+      <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Enter product name..." required>
+          <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+  </form>
+
+  {% if product %}
+      <table class="table table-bordered">
+
+              <tr>
+                  <th>No.</th>
+                  <th>Product Name</th>
+                 <th>Price</th>
+              </tr>
+
+
+              {% for p in product %}
+              <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td><a href="{% url 'search:searchdetail' p.id %}">{{ p.name }}</a></td>
+                  <td>{{ p.price }}</td>
+              </tr>
+              {% empty %}
+              <tr>
+                  <td colspan="2">No products found.</td>
+              </tr>
+              {% endfor %}
+
+      </table>
+  {% endif %}
+</div>
+
+{% endblock %}

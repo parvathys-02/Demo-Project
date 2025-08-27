@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <form method="POST">
+ {% csrf_token %}
+ <!-- cross site request forgery-->
+
+
+<div class=" shadow text-dark w-25 fs-5 mx-auto">
+    <h2 class="text-center">Register</h2>
+<div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label mt-2">Username</label>
+  <input  type="text" class="form-control" id="exampleFormControlInput1"  name="user" placeholder="Enter Username">
+</div>
+ <div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label">Password</label>
+  <input type="password" class="form-control" id="exampleFormControlInput1" name="pass" placeholder="Enter Password">
+</div>
+ {% if messages %}
+<ul class="messages fs-5 text-light fw-bold">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+ <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-2">
+  <button class="btn btn-outline-light text-dark shadow-lg mb-3" type="submit">Submit</button>
+</div>
+ </div>
+ </form>
+
+
+
+{% endblock %}

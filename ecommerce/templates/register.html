@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <form method="POST">
+ {% csrf_token %}
+ <!-- cross site request forgery-->
+
+
+<div class=" shadow text-dark w-50 fs-5 mx-auto">
+    <h2 class="text-center">Register</h2>
+<div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label mt-2">Username</label>
+  <input  type="text" class="form-control" id="exampleFormControlInput1"  name="user" placeholder="Enter Username">
+</div>
+ <div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label">Password</label>
+  <input type="password" class="form-control" id="exampleFormControlInput1" name="pass" placeholder="Enter Password">
+</div>
+ <div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
+  <input type="password" class="form-control" id="exampleFormControlInput1" name="pass1" placeholder="Confirm your Password">
+</div>
+ <div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label">Email</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1"  name="email" placeholder="Enter email">
+</div>
+ <div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label">First Name</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1"  name="first" placeholder="Enter you first name">
+</div>
+ <div class="container mb-1">
+  <label for="exampleFormControlInput1" class="form-label">Last name</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1"  name="last" placeholder="Enter your last name">
+</div>
+ {% if messages %}
+<ul class="messages fs-5 text-light fw-bold">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+ <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-2">
+  <button class="btn btn-outline-light text-dark shadow-lg mb-3" type="submit">Submit</button>
+</div>
+
+ </div>
+ </form>
+
+
+
+{% endblock %}

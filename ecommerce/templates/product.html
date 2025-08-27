@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- product section start -->
+<div class="product_section layout_padding">
+  <div class="container">
+
+    <!-- Category image -->
+    <div><img src="{{ category.image.url }}" class="image_8" style="width:500px;"></div>
+
+    <!-- Category name -->
+    <h1 class="feature_taital mt-3">{{ category.name }}</h1>
+
+    <!-- Category description -->
+    <p class="feature_text mt-2 mb-5">{{ category.description }}</p>
+
+    <!-- Bootstrap Card below the description -->
+     <div class="row mt-4">
+      {% for i in category.products.all %}
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="beds_section active" style="height:550px;">
+
+                     <div><img src="{{i.image.url}}" class="image_2" style="width:100%;height:100px;;"></div>
+          <h1 class="bed_text mt-5">{{i.name}}</h1>
+            <h3 class="text-center">Price: <strong>₹ {{i.price}}</strong></h3>
+
+            <h3 class="text-center">Stock: <strong>{{i.stock}}</strong></h3>
+        <div class="mt-4 text-center"><a class="" href="{% url 'shop:details' i.pk %}"><button class="btn btn-primary">View Details</button></a></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+<!-- product section end -->
+
+{% endblock %}

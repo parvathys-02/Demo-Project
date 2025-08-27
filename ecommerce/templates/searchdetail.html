@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!--<div class="col-sm-12">-->
+    <div class="card mb-3" style="max-width: 100%;">
+<!--    <div class="feature_box_2">-->
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{product.image.url}}" class="img-fluid rounded-start m-5" style="height:400px;">
+                </div>
+            <div class="col-md-8 mt-5">
+                <div class="card-body">
+        <h1 class="card-title fs-1 fw-bold">{{product.name}}</h1>
+                    <h3>Price: <strong>₹ {{product.price}}</strong></h3>
+                    <h3>Stock: <strong>{{product.stock}}</strong> </h3>
+                    <p><h3>Product Details </h3>{{product.description}}</p>
+                    <a href="#"><button class="btn btn-primary">Add to Cart</button></a>
+</div>
+    </div>
+
+<!--<div class="card mb-3" style="max-width: 540px;">-->
+<!--  <div class="row g-0">-->
+<!--    <div class="col-md-4">-->
+<!--      <img src="..." class="img-fluid rounded-start" alt="...">-->
+<!--    </div>-->
+<!--    <div class="col-md-8">-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-title">Card title</h5>-->
+<!--        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+<!--        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+{% endblock %}
